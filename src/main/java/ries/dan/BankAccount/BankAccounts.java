@@ -5,24 +5,27 @@ package ries.dan.BankAccount;
  */
 public class BankAccounts {
 
-
-    protected enum AccountType {Checking, Savings, Investment}
+    static int accountNumber = 0;
 
     protected void newBankAccount(String accountType, String accountHolderName){
     }
 
     protected static int setAccountNumber(){
-
+        accountNumber += 1;
+        return accountNumber;
     }
 
-//    protected static String setAccountType(enum AccountType, String accountType){
-//        if (AccountType.equals(accountType)){
-//            return accountType;
-//        }
-//        else{
-//            System.out.println("Error: Wrong account type");
-//        }
-//    }
+    protected static String setAccountType(String accountType, String accountHolderName){
+        if (!accountType.equals("Checking") ||
+                !accountType.equals("Savings") || !accountType.equals("Investment")){
+            System.out.println("Error: Wrong account type");
+            return null;
+        }
+        else{
+            return accountType;
+        }
+
+    }
 
     protected static void setInterestRate(){}
 
